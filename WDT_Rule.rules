@@ -1,0 +1,8 @@
+rule "WDT"
+when
+	Time cron "0 * * * * ?"
+then
+	sendCommand(WDT, OFF)
+	Thread::sleep(30000)
+	sendCommand(WDT, ON)
+end
